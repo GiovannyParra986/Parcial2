@@ -1,0 +1,29 @@
+<div class="container-fluid mt-2">
+  <h2 class="text-center">Cafes</h2>
+  <div class="col" *ngIf="selected">
+    <app-cafe-detail [cafeDetail]="selectedCafe"></app-cafe-detail>
+  </div>
+  <br>
+  <div class="row mb-4">
+    <div *ngFor="let cafe of cafes" class="col-4 ruta-card">
+      <a class="card m-2 text-decoration-none" (click)="selectCafe(cafe)">
+        <div class="card-body black-text">
+          <h5 class="card-title">Cafe #{{ cafe.id }}</h5>
+          <p class="card-text">
+            Nombre: {{ cafe.nombre }}
+          </p>
+          <p class="card-text">
+            Tipo: {{ cafe.tipo }}
+          </p>
+          <p class="card-text">
+            Region: {{ cafe.region }}
+          </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <br>
+      <br>
+    </div>
+  </div>
